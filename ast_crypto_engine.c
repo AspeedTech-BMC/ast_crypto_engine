@@ -504,12 +504,12 @@ static const struct cipher_data_st cipher_data[] = {
       EVP_aes_128_cfb, 2048
 #endif
     },
-    { NID_aes_192_cfb128, 16, 192 / 8, 0, EVP_CIPH_CFB_MODE, "cfb(aes)",
+    { NID_aes_192_cfb128, 16, 192 / 8, 16, EVP_CIPH_CFB_MODE, "cfb(aes)",
 #ifndef AFALG_NO_FALLBACK
       EVP_aes_192_cfb, 1440
 #endif
     },
-    { NID_aes_256_cfb128, 16, 256 / 8, 0, EVP_CIPH_CFB_MODE, "cfb(aes)",
+    { NID_aes_256_cfb128, 16, 256 / 8, 16, EVP_CIPH_CFB_MODE, "cfb(aes)",
 #ifndef AFALG_NO_FALLBACK
       EVP_aes_256_cfb, 1152
 #endif
@@ -519,12 +519,12 @@ static const struct cipher_data_st cipher_data[] = {
       EVP_aes_128_ofb, 2048
 #endif
     },
-    { NID_aes_192_ofb128, 16, 192 / 8, 0, EVP_CIPH_OFB_MODE, "ofb(aes)",
+    { NID_aes_192_ofb128, 16, 192 / 8, 16, EVP_CIPH_OFB_MODE, "ofb(aes)",
 #ifndef AFALG_NO_FALLBACK
       EVP_aes_192_ofb, 1440
 #endif
     },
-    { NID_aes_256_ofb128, 16, 256 / 8, 0, EVP_CIPH_OFB_MODE, "ofb(aes)",
+    { NID_aes_256_ofb128, 16, 256 / 8, 16, EVP_CIPH_OFB_MODE, "ofb(aes)",
 #ifndef AFALG_NO_FALLBACK
       EVP_aes_256_ofb, 1152
 #endif
