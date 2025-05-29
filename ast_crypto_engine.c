@@ -1666,7 +1666,7 @@ static int digest_copy(EVP_MD_CTX *to, const EVP_MD_CTX *from)
         return 1;
 
     if (digest_from->inp_len > 0) {
-        digest_to->inp_data = OPENSSL_malloc(digest_from->inp_len);
+        digest_to->inp_data = OPENSSL_zalloc(digest_from->inp_len);
         if (digest_to->inp_data == NULL) {
            ALG_WARN("%s\n", __func__);
            digest_to->inp_len = 0;
@@ -2203,7 +2203,7 @@ static int afalg_asym_cipher_init(BIGNUM *e, BIGNUM *n)
     ALG_DBG("%s\n", __func__);
     /* Start connecting akcipher */
     if (!rsa_ctx) {
-        rsa_ctx = OPENSSL_malloc(sizeof(struct rsa_ctx));
+        rsa_ctx = OPENSSL_zalloc(sizeof(struct rsa_ctx));
         if (!rsa_ctx) {
             ALG_WARN("%s: rsa_ctx allocation failed\n", __func__);
             return -ENOMEM;
